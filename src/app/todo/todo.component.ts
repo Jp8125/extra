@@ -30,7 +30,15 @@ export class TodoComponent {
  
   }
   del(id:number){
-    this.tarr.splice(id,1)
+    if(this.tarr.length==1)
+    {
+      this.tarr=[]
+      this.id=0
+    }
+    else{
+      this.tarr.splice(id,1)
+
+    }
   }
   complete(obj:TodoComponent){
         obj.status='complete'
